@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# import re
+import re
 import logging
 import argparse
 import requests
