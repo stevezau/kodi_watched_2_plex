@@ -6,6 +6,7 @@ This script will sync the kodi watched status for Movies and TVShows into Plex
 # Install
 ```
 git clone https://github.com/stevezau/kodi_watched_2_plex.git
+cd kodi_watched_2_plex
 pip install -r requirements.txt
 ```
 
