@@ -71,12 +71,13 @@ def get_tv(api_url):
 if __name__ == '__main__':
     args = parser.parse_args()
     kodi_api_url = '%s/jsonrpc' % args.kodi_api_url.rstrip('/')
+    plex = None
 
     try:
         account = MyPlexAccount(args.plex_username, args.plex_password)
         plex = account.resource(args.plex_server_name).connect()
     except Exception as e:
-        log.critical('Error connecting to Plex %s' % str(e))
+        log.exception('Error connecting to Plex %s' % str(e))
         exit(1)
 
     # TVShows
@@ -99,7 +100,7 @@ if __name__ == '__main__':
                                  (epsiode.grandparentTitle, epsiode.seasonNumber, epsiode.index))
                         epsiode.markWatched()
     except Exception as e:
-        log.critical('Error processing TVShows %s' % str(e))
+        log.exception('Error processing TVShows %s' % str(e))
         exit(1)
 
     # Movies
