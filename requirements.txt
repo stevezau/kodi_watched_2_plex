@@ -1,2 +1,2 @@
 requests
-https://github.com/pkkid/python-plexapi/archive/fix_sections.zip
+https://github.com/pkkid/python-plexapi/archive/master.zip
